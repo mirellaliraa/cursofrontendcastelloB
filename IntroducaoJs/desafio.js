@@ -8,5 +8,19 @@ if (idade < 18) {
     (idade < 60)
 }
 
-// Tabuada
+// 2. Tabuada
+var tabuada = Number(input("Digite a tabuada que quer: "))
+for(let i = 0; i<=10 ; i++){
+    console.log(`${tabuada} x ` + i +" = "+(i*tabuada))
+}
 
+//3. Verificação de Números Pares
+
+var prompt = require("prompt-sync")();
+for(let i ; i<20 ; i++){
+    //imprimir nº pares
+    let resto = (i%2);
+    if(resto == 0){
+        console.log(i);
+    }
+};
