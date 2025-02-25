@@ -4,15 +4,17 @@ var idade = prompt(("Informe sua idade: "));
 
 if (idade < 18) {
     console.log("Menor de idade")
-} else if{
-    (idade < 60)
+} else if (idade < 60){
+    console.log("Adulto");
+} else if (idade > 60){
+    console.log("Idoso");
 }
 
 // 2. Tabuada
 var tabuada = Number(input("Digite a tabuada que quer: "))
 for(let i = 0; i<=10 ; i++){
     console.log(`${tabuada} x ` + i +" = "+(i*tabuada))
-}
+};
 
 //3. Verificação de Números Pares
 
