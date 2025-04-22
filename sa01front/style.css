@@ -1,0 +1,64 @@
+body {
+    background-color: #1a1a1a;
+}
+
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.gif {
+    display: none; /* começa invisível */
+    margin-top: -180px;
+    margin-left: 130px;
+    width: 640px;
+    height: 640px;
+}
+
+.semaforo {
+    width: 150px;
+    height: 350px;
+    padding: 10px;
+    margin-left: 30px;
+    background: #333;
+    border-radius: 5%;
+    border: 5px solid #000000;
+}
+
+.luz {
+    width: 97px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background-color: #111;
+    transition: background-color 0.3s;
+}
+
+.acesa-vermelho {
+background-color: red;
+}
+
+.acesa-amarelo {
+background-color: yellow;
+}
+
+.acesa-verde {
+background-color: lime;
+}
+
+button {
+    background-color: rgb(8, 211, 8);
+    padding: 10px 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-top: 11px;
+    margin-left: 80px;
+}
+
+button:hover{
+    background: rgb(54, 158, 28);
+}
