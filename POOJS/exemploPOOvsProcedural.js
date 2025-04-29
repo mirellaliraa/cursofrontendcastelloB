@@ -99,7 +99,7 @@ class Funcionario extends Pessoa {
         return this.#cargo;
     }
     get getSalario(){
-        return this.salario;
+        return this.#salario;
     }
     set setSalario(salario){
         this.#salario = salario;
