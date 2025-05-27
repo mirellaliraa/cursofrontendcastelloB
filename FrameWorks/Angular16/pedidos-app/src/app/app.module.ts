@@ -7,6 +7,8 @@ import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.co
 import { PedidoFormComponent } from './componentes/pedido-form/pedido-form.component';
 import { ProdutoFormComponent } from './componentes/produto-form/produto-form.component';
 import { PedidoListComponent } from './componentes/pedido-list/pedido-list.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [

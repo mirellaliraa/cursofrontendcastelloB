@@ -1,4 +1,4 @@
-// classe model para manipulação dos dados
+// classe model para manipulação dos dados -- abreviada
 
 export class Cliente{
     constructor(
