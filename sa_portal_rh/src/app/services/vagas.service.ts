@@ -18,10 +18,22 @@ export class VagasService {
     return this.http.get<Vaga[]>(this.apiUrl);
   }
 
-
   // post
+  postVaga(vaga:Vaga): Observable<Vaga[]>{ // método para enviar os dados para API
+    return this.http.post<Vaga[]>(this.apiUrl, vaga);
+    // observable -> rxjs => tradutor de Json -> typescript
+  }
 
   // put
+  putVaga(id: any, vaga: Vaga): Observable<Vaga[]>{
+    const url = `${this.apiUrl}/${id}`; // construir a URL join(apiUrl+id
+    return this.http.put<Vaga[]>(url, vaga);
+  }
+  
 
   // delete
+  deleteVaga(id: any): Observable<Vaga[]>{
+    const url = this.apiUrl+"/"+id;
+    return this.http.delete<Vaga[]>(url);
+  }
 }

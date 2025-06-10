@@ -92,8 +92,3 @@ export class Vaga {
   }
 
 }
-
-// and i want u to knowwwww (i've got my mind made up noww)
-// but i need more timeee
-// and i want you to sayyyy
-// do you know what im sayinggg?
