@@ -26,6 +26,7 @@ export class Vaga {
     private _descricao: string,
     private _salario: number
   ) {}
+
   // criar métodos de acesso público (getters e setters)
 
   public get id(): number {
@@ -67,6 +68,29 @@ export class Vaga {
   public set salario(value: number) {
     this._salario = value;
   }
+
+  // métodos de conversão de objetos
+  // obj => json
+  public toMap():{[key:string]:any}{
+    return{
+      id: this._id,
+      nome: this._nome,
+      foto: this._foto,
+      descricao: this._descricao,
+      salario: this._salario
+    }
+  }
+  // json => obj 
+  static fromMap(map:any): Vaga{
+    return new Vaga(
+      map.id,
+      map.nome,
+      map.foto,
+      map.descricao,
+      map.salario
+    )
+  }
+
 }
 
 // and i want u to knowwwww (i've got my mind made up noww)
