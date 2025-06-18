@@ -29,5 +29,12 @@ export class CurriculoService {
     return this.http.delete<Curriculo[]>(url);
   }
 
+  listarTodos(): Observable<any[]> {
+    return this.http.get<any[]>('/api/curriculos');
+  }
+
+  getCurriculos(): Observable<any[]> {
+  return this.http.get<any[]>(this.apiUrl);
+  }
 
 }

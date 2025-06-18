@@ -1,1 +1,15 @@
-<p>curriculo-list works!</p>
+<div *ngIf="!exibirLista">
+  <h2>Meu Currículo</h2>
+  <p>Nome: {{dadosCurriculo?.nome}}</p>
+  <p>Formação: {{dadosCurriculo?.formacao}}</p>
+  <p>Experiência: {{dadosCurriculo?.experiencia}} anos</p>
+</div>
+
+<div *ngIf="exibirLista">
+  <h2>Candidatos</h2>
+  <ul>
+    <li *ngFor="let c of curriculos">
+      {{c.nome}} - {{c.area}} ({{c.experiencia}} anos)
+    </li>
+  </ul>
+</div>
