@@ -17,10 +17,9 @@ export class CurriculoListComponent implements OnInit{
   constructor(private route: ActivatedRoute, private curriculoService: CurriculoService, private router: Router) {}
 
   ngOnInit(): void {
-    this.exibirLista = this.route.snapshot.data['exibirLista'];
-
-    if (this.exibirLista) {
-      this.curriculoService.listarTodos().subscribe(dados => this.curriculos = dados);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.listarCurriculoPorId(id);
     } 
   }
 
@@ -30,10 +29,10 @@ export class CurriculoListComponent implements OnInit{
   }
 }
 
-  listarCurriculos(): void {
+  listarCurriculos(id: number): void {
   this.curriculoService.getCurriculos().subscribe(
-    (e: any[]) => {
-      this.curriculos = e.map((curriculo: any) => Curriculo.fromMap(curriculo));
+    (e: Curriculo[]) => {
+      this.curriculos = e.map((curriculo: Curriculo) => Curriculo.fromMap(curriculo));
     },
     (error: any) => {
       console.error('Erro ao listar currículos: ', error);
@@ -42,7 +41,7 @@ export class CurriculoListComponent implements OnInit{
 }
 
   listarCurriculoPorId(id: any): void {
-  this.curriculoService.getCurriculoByUsuarioId(id).subscribe(
+  this.curriculoService.getCurriculoById(id).subscribe(
     (curriculos: any[]) => {
       if (curriculos && curriculos.length > 0) {
         this.curriculo = Curriculo.fromMap(curriculos[0]);
@@ -51,7 +50,7 @@ export class CurriculoListComponent implements OnInit{
       }
     },
     (error: any) => {
-      console.error('Erro ao buscar currículo por ID: ', error);
+      console.error('Erro ao buscar currículo', error);
     }
   );
 }
@@ -59,8 +58,9 @@ export class CurriculoListComponent implements OnInit{
   atualizarCurriculo(id: any): void {
     this.curriculoService.updateCurriculo(id, this.curriculo).subscribe(
       () => {
-        this.curriculo = new Curriculo(0, '', '', '', '');
-        this.listarCurriculos();
+        alert("Curriculo atualizado");
+        this.listarCurriculoPorId(id);
+        this.listarCurriculos(id);
       },
       (error: any) => {
         console.error('Erro ao atualizar currículo: ', error);
@@ -72,7 +72,7 @@ export class CurriculoListComponent implements OnInit{
     this.curriculoService.deleteCurriculo(id).subscribe(
       () => {
         this.curriculo = new Curriculo(0, '', '', '', '');
-        this.listarCurriculos();
+        this.listarCurriculos(id);
       },
       (error: any) => {
         console.error('Erro ao deletar currículo: ', error);

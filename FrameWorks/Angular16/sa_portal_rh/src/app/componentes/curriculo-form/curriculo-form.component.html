@@ -29,6 +29,7 @@
                 <th>LinkedIn</th>
                 <th>Formação</th>
                 <th>Experiência</th>
+                <th class="espaco">...</th>
             </tr>
         </thead>
         <tbody>
@@ -39,13 +40,17 @@
                 <td>{{curriculo.formacao}}</td>
                 <td>{{curriculo.experiencia}}</td>
                 <td>
-                    <button class="btn-listar" type="button" (click)="listarCurriculoPorId(curriculo)">
-                        Listar
-                    </button>
+                    <button class="btn-editar" [routerLink]="['/curriculo-editar', curriculo.id]">Editar</button>
+                    <button class="btn-deletar" (click)="excluirCurriculo(curriculo.id)">Deletar</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+
+<br>
+<br>
+<br>
+<br>
 
 <div class="rodape"></div>

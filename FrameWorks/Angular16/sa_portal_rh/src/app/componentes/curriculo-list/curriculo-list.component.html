@@ -1,34 +1,24 @@
-<div *ngIf="!exibirLista" class="curriculo-list-container">
-  <h2>Meu Currículo</h2>
-  <p>Habilidades: {{dadosCurriculo?.habilidades}}</p>
-  <p>LinkedIn: {{dadosCurriculo?.linkedin}}</p>
-  <p>Formação: {{dadosCurriculo?.formacao}}</p>
-  <p>Experiência: {{dadosCurriculo?.experiencia}}</p>
-  <button type="button" (click)="Editar()">Editar Currículo</button>
-</div>
-
-<br>
+<h2>Editar curriculo</h2>
 
 <div *ngIf="!exibirLista" class="curriculo-list-container">
-  <h2>Editar curriculo</h2>
+
 <form>
     <label for="">ID</label>
-    <input type="text" [(ngModel)]="curriculo.id"> <br>
+    <input type="text" [(ngModel)]="curriculo.id" name="id"> <br>
 
     <label for="">Habilidades</label>
-    <input type="text" [(ngModel)]="curriculo.habilidades"> <br>
+    <input type="text" [(ngModel)]="curriculo.habilidades" name="habilidades"> <br>
 
     <label for="">LinkedIn</label>
-    <input type="text" [(ngModel)]="curriculo.linkedin"> <br>
+    <input type="text" [(ngModel)]="curriculo.linkedin" name="linkedin"> <br>
 
     <label for="">Experiência</label>
-    <input type="text" [(ngModel)]="curriculo.experiencia"> <br>
+    <input type="text" [(ngModel)]="curriculo.experiencia" name="experiencia"> <br>
 
     <label for="">Formação</label>
-    <input type="text" [(ngModel)]="curriculo.formacao"> <br>
+    <input type="text" [(ngModel)]="curriculo.formacao" name="formacao"> <br>
 
     <button type="button" (click)="atualizarCurriculo(curriculo.id)">Editar curriculo</button>
-    <button type="button" (click)="excluirCurriculo(curriculo.id)">Excluir curriculo</button>
 
 </form>
 </div>

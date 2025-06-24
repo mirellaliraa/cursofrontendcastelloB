@@ -27,8 +27,8 @@
       "id": "1",
       "habilidades": "JavaScript, React, Java",
       "linkedin": "https://www.linkedin.com/joaosilva",
-      "experiencia": "Desenvolvedor Frontend",
-      "formacao": "Análise e Desenvolvimento de Sistemas"
+      "formacao": "Análise e Desenvolvimento de Sistemas",
+      "experiencia": "Desenvolvedor Frontend"
     },
     {
       "id": "2",
@@ -43,76 +43,6 @@
       "linkedin": "https://www.linkedin.com/dorothymendes",
       "experiencia": "Desenvolvedor Fullstack",
       "formacao": "Ciência da Computação"
-    },
-    {
-      "id": "1",
-      "habilidades": "JavaScript, React, Java",
-      "linkedin": "https://www.linkedin.com/joaosilva",
-      "formacao": "Análise e Desenvolvimento de Sistemas",
-      "experiencia": "Desenvolvedor Frontend"
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": "1",
-      "habilidades": "JavaScript, React, Java",
-      "linkedin": "https://www.linkedin.com/joaosilva",
-      "formacao": "Análise e Desenvolvimento de Sistemas",
-      "experiencia": "Desenvolvedor Frontend"
-    },
-    {
-      "id": 0,
-      "habilidades": "",
-      "linkedin": "",
-      "formacao": "",
-      "experiencia": ""
-    },
-    {
-      "id": "5",
-      "habilidades": "aaaaa",
-      "linkedin": "aaaaa",
-      "formacao": "aaaaa",
-      "experiencia": "aaaaaaa"
     }
   ]
 }

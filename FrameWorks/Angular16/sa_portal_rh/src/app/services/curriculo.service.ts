@@ -11,12 +11,12 @@ export class CurriculoService {
 
   constructor(private http: HttpClient) { }
 
-  getCurriculoByUsuarioId(id: number): Observable<Curriculo[]>{
-    return this.http.get<Curriculo[]>(`${this.apiUrl}?usuarioId=${id}`);
+  getCurriculoById(id: number): Observable<Curriculo[]>{
+    return this.http.get<Curriculo[]>(`${this.apiUrl}?id=${id}`);
   }
 
-  getCurriculos(): Observable<any[]> {
-  return this.http.get<any[]>(this.apiUrl);
+  getCurriculos(): Observable<Curriculo[]> {
+    return this.http.get<Curriculo[]>(this.apiUrl);
   }
 
   createCurriculo(curriculo: Curriculo): Observable<Curriculo[]>{

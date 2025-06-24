@@ -38,7 +38,7 @@ export class CurriculoFormComponent implements OnInit{
   }
 
   listarCurriculoPorId(id: any): void {
-  this._curriculoService.getCurriculoByUsuarioId(id).subscribe(
+  this._curriculoService.getCurriculoById(id).subscribe(
     (curriculos: any[]) => {
       if (curriculos && curriculos.length > 0) {
         this.curriculo = Curriculo.fromMap(curriculos[0]);
@@ -53,14 +53,28 @@ export class CurriculoFormComponent implements OnInit{
 }
 
   cadastrarCurriculo(): void {
-  this._curriculoService.createCurriculo(this.curriculo).subscribe({
-    next: (res) => {
+  this._curriculoService.createCurriculo(this.curriculo).subscribe(
+    () => {
       this.curriculo = new Curriculo(0, '', '', '', '');
       this.listarCurriculos();
-    },
-    error: (error) => {
+      alert("Curriculo cadastrado com sucesso")
+    }, (error) => {
       console.error('Erro ao cadastrar currículo:', error);
     }
-  });
+  );
+}
+
+excluirCurriculo(id: any): void {
+  if (confirm('Tem certeza que deseja deletar este currículo?')) {
+    this._curriculoService.deleteCurriculo(id).subscribe(
+      () => {
+        this.curriculo = new Curriculo(0, '', '', '', '');
+        this.listarCurriculos();
+      },
+      (error: any) => {
+        console.error('Erro ao deletar currículo: ', error);
+      }
+    );
+  }
 }
 }

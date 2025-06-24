@@ -17,8 +17,7 @@ export class CurriculosComponent implements OnInit{
   }
 
   listarCurriculos(){
-    const usuarioId = 1;
-    this._curriculosService.getCurriculoByUsuarioId(usuarioId).subscribe(
+    this._curriculosService.getCurriculos().subscribe(
       (e) => {
         this.curriculos = e.map(
           (curriculos) => {
