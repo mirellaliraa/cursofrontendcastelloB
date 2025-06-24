@@ -1,8 +1,8 @@
 h2 {
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
-    color: #2d3e50;
-    text-align: center;
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  color: #2d3e50;
+  text-align: center;
 }
 
 .curriculo-form {
@@ -45,6 +45,58 @@ h2 {
     border: none;
     border-radius: 4px;
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover {
+      background: #125ea2;
+    }
+  }
+}
+
+.listar-curriculos {
+  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 32px auto;
+  max-width: 900px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+  }
+
+  th {
+    background: #237bdf;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  tr.vaga-row:hover {
+    background: #e3f0fc;
+    transition: background 0.2s;
+  }
+
+  .btn-listar {
+    padding: 6px 14px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
     cursor: pointer;
     transition: background 0.2s;
     &:hover {

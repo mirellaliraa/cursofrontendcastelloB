@@ -1,7 +1,8 @@
 export class Curriculo {
     constructor(
         public id: number,
-        public nome: string,
+        public habilidades: string,
+        public linkedin: string,
         public formacao: string,
         public experiencia: string,
     ){}
@@ -9,7 +10,8 @@ export class Curriculo {
     static fromMap(map:any): Curriculo {
         return new Curriculo(
             map.id,
-            map.nome,
+            map.habilidades,
+            map.linkedin,
             map.formacao,
             map.experiencia
         );
@@ -18,7 +20,8 @@ export class Curriculo {
     public toMap():{[key:string]:any}{
         return {
             id: this.id,
-            nome: this.nome,
+            habilidades: this.habilidades,
+            linkedin: this.linkedin,
             formacao: this.formacao,
             experiencia: this.experiencia,
         }

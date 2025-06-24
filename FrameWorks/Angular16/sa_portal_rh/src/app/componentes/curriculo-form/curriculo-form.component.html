@@ -2,29 +2,31 @@
 
 <form class="curriculo-form">
   <label for="">ID</label>
-  <input type="text" [(ngModel)]="curriculo.id"> <br>
+  <input type="text" [(ngModel)]="curriculo.id" name="id"> <br>
 
-  <label for="">Nome</label>
-  <input type="text" [(ngModel)]="curriculo.nome"> <br>
+  <label for="">Habilidades</label>
+  <input type="text" [(ngModel)]="curriculo.habilidades" name="habilidades"> <br>
+
+<label for="">LinkedIn</label>
+  <input type="text" [(ngModel)]="curriculo.linkedin" name="linkedin"> <br>
 
   <label for="">Formação</label>
-  <input type="text" [(ngModel)]="curriculo.formacao"> <br>
+  <input type="text" [(ngModel)]="curriculo.formacao" name="formacao"> <br>
 
   <label for="">Experiência</label>
-  <input type="text" [(ngModel)]="curriculo.experiencia"> <br>
+  <input type="text" [(ngModel)]="curriculo.experiencia" name="experiencia"> <br>
 
   <button type="button" (click)="cadastrarCurriculo()">Cadastrar curriculo</button>
-  <button type="button" (click)="atualizarCurriculo(curriculo.id)">Atualizar curriculo</button>
-  <button type="button" (click)="excluirCurriculo(curriculo.id)">Excluir curriculo</button>
 
 </form>
 
-<section class="listar-vagas">
+<section class="listar-curriculos">
     <table class="table">
         <thead>
             <tr>
                 <th>Código do curriculo</th>
-                <th>Nome</th>
+                <th>Habilidades</th>
+                <th>LinkedIn</th>
                 <th>Formação</th>
                 <th>Experiência</th>
             </tr>
@@ -32,11 +34,12 @@
         <tbody>
             <tr class="vaga-row" *ngFor="let curriculo of curriculos">
                 <td>{{curriculo.id}}</td>
-                <td>{{curriculo.nome}}</td>
+                <td>{{curriculo.habilidades}}</td>
+                <td>{{curriculo.linkedin}}</td>
                 <td>{{curriculo.formacao}}</td>
                 <td>{{curriculo.experiencia}}</td>
                 <td>
-                    <button class="btn-listar" type="button" (click)="listarCurriculoPorId(curriculos)">
+                    <button class="btn-listar" type="button" (click)="listarCurriculoPorId(curriculo)">
                         Listar
                     </button>
                 </td>

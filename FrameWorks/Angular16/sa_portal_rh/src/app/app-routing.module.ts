@@ -12,8 +12,9 @@ const routes: Routes = [
   {path: "vagas", component: VagasComponent},
   {path: "curriculos", component: CurriculosComponent},
   {path: "painel-vagas", component: PainelVagasComponent},
-  {path: 'curriculo-list', component: CurriculoListComponent},
-  {path: 'curriculo-form', component: CurriculoFormComponent},
+  {path: 'curriculos/novo', component: CurriculoFormComponent},
+  {path: 'curriculo-editar/:id', component: CurriculoFormComponent},
+  {path: 'meu-curriculo', component: CurriculoListComponent, data: { exibirLista: true }},
 ];
 
 @NgModule({

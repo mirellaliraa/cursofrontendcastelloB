@@ -1,6 +1,5 @@
 <h2>Cadastrar</h2>
 
-<!-- formulário para mostrar vaga selecionada -->
 <form action="">
     <label for="">ID</label>
     <input type="text" [(ngModel)]="vaga.id"> <br>
@@ -17,7 +16,7 @@
     <label for="">Salário</label>
     <input type="text" [(ngModel)]="vaga.salario"> <br>
 
-    <button type="button" (click)="cadastrarVaga()">Cadastrar vaga</button>
+    <button type="button" (click)="cadastrarVaga()">Editar vaga</button>
     <button type="button" (click)="atualizarVaga(vaga.id)">Atualizar vaga</button>
     <button type="button" (click)="excluirVaga(vaga.id)">Excluir vaga</button>
 

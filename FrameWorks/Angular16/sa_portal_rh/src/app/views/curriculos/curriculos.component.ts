@@ -24,7 +24,8 @@ export class CurriculosComponent implements OnInit{
           (curriculos) => {
             return new Curriculo(
               curriculos.id,
-              curriculos.nome,
+              curriculos.habilidades,
+              curriculos.linkedin,
               curriculos.formacao,
               curriculos.experiencia,
             );

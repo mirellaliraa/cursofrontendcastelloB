@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Curriculo } from 'src/app/models/curriculo.model';
 import { CurriculoService } from 'src/app/services/curriculo.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-curriculo-form',
@@ -8,16 +9,23 @@ import { CurriculoService } from 'src/app/services/curriculo.service';
   styleUrls: ['./curriculo-form.component.scss']
 })
 export class CurriculoFormComponent implements OnInit{
-  public curriculo: Curriculo = new Curriculo(0, '', '', '',);
+  public curriculo: Curriculo = new Curriculo(0, '', '', '', '');
   public curriculos: Curriculo[] = [];
 
-  constructor(private _curriculoService: CurriculoService) {}
+  constructor(
+    private _curriculoService: CurriculoService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.listarCurriculos();
+    const id = this.route.snapshot.paramMap.get('id');
+     if (id) {
+      this.listarCurriculoPorId(id);
+    } else {
+      this.listarCurriculos();
+    }
   }
 
-  //* métodos CRUD
   listarCurriculos(): void {
     this._curriculoService.getCurriculos().subscribe(
       (e: any[]) => {
@@ -30,42 +38,29 @@ export class CurriculoFormComponent implements OnInit{
   }
 
   listarCurriculoPorId(id: any): void {
-    // Implementar lógica para buscar currículo por ID se necessário
-  }
+  this._curriculoService.getCurriculoByUsuarioId(id).subscribe(
+    (curriculos: any[]) => {
+      if (curriculos && curriculos.length > 0) {
+        this.curriculo = Curriculo.fromMap(curriculos[0]);
+      } else {
+        console.log('Nenhum currículo encontrado');
+      }
+    },
+    (error: any) => {
+      console.error('Erro ao buscar currículo por ID: ', error);
+    }
+  );
+}
 
   cadastrarCurriculo(): void {
-    this._curriculoService.createCurriculo(this.curriculo).subscribe(
-      () => {
-        this.curriculo = new Curriculo(0, '', '', '',);
-        this.listarCurriculos();
-      },
-      (error: any) => {
-        console.error('Erro ao cadastrar currículo: ', error);
-      }
-    );
-  }
-
-  atualizarCurriculo(id: any): void {
-    this._curriculoService.updateCurriculo(id, this.curriculo).subscribe(
-      () => {
-        this.curriculo = new Curriculo(0, '', '', '',);
-        this.listarCurriculos();
-      },
-      (error: any) => {
-        console.error('Erro ao atualizar currículo: ', error);
-      }
-    );
-  }
-
-  excluirCurriculo(id: any): void {
-    this._curriculoService.deleteCurriculo(id).subscribe(
-      () => {
-        this.curriculo = new Curriculo(0, '', '', '',);
-        this.listarCurriculos();
-      },
-      (error: any) => {
-        console.error('Erro ao deletar currículo: ', error);
-      }
-    );
-  }
+  this._curriculoService.createCurriculo(this.curriculo).subscribe({
+    next: (res) => {
+      this.curriculo = new Curriculo(0, '', '', '', '');
+      this.listarCurriculos();
+    },
+    error: (error) => {
+      console.error('Erro ao cadastrar currículo:', error);
+    }
+  });
+}
 }
