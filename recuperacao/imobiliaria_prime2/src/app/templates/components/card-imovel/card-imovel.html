@@ -1,0 +1,59 @@
+<div class="property-details-page">
+  <div class="container">
+    <!-- Botão Voltar -->
+    <button class="btn btn-outline btn-back" onclick="location.href='/'">← Voltar</button>
+
+    <div class="property-grid">
+      <!-- Coluna Principal -->
+      <div class="property-main">
+        <!-- Galeria de Imagens -->
+        <div class="card gallery-card">
+          <img id="main-image" class="main-image" src="" alt="Imagem do imóvel" />
+          <div id="thumbnails" class="thumbnails"></div>
+        </div>
+
+        <!-- Informações do Imóvel -->
+        <div class="card property-info-card">
+          <div class="badges">
+            <span id="badge-type" class="badge"></span>
+            <span id="badge-propertyType" class="badge secondary"></span>
+          </div>
+          <h1 id="property-title" class="property-title"></h1>
+          <p id="property-address" class="property-address"></p>
+          <p id="property-price" class="property-price"></p>
+          <div class="property-features" id="property-features"></div>
+          <div class="property-description">
+            <h3>Descrição</h3>
+            <p id="property-description"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Lateral -->
+      <div class="property-sidebar">
+        <!-- Ações -->
+        <div class="card sidebar-card">
+          <button id="btn-interest" class="btn btn-primary w-full">Tenho Interesse</button>
+          <button class="btn btn-outline w-full mt-2">Agendar Visita</button>
+        </div>
+
+        <!-- Corretor -->
+        <div class="card sidebar-card">
+          <h3>Corretor Responsável</h3>
+          <p id="realtor-name"></p>
+          <p id="realtor-phone"></p>
+          <button class="btn btn-outline w-full mt-2">Ligar Agora</button>
+          <button class="btn btn-outline w-full mt-2">Enviar E-mail</button>
+        </div>
+
+        <!-- Informações Adicionais -->
+        <div class="card sidebar-card">
+          <h3>Informações</h3>
+          <p id="property-code"></p>
+          <p id="property-published"></p>
+          <p id="property-type"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

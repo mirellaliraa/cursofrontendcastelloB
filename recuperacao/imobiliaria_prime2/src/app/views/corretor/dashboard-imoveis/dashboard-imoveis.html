@@ -1,0 +1,80 @@
+<div class="dashboard-page">
+  <div class="container">
+    <!-- Botão voltar -->
+    <button class="btn btn-outline btn-back" onclick="location.href='/'">
+      ← Voltar
+    </button>
+
+    <div class="dashboard-header">
+      <div>
+        <h1 class="dashboard-title">Dashboard do Corretor</h1>
+        <p class="dashboard-subtitle">Bem-vindo, João</p>
+      </div>
+      <button class="btn btn-primary" onclick="alert('Cadastrar Imóvel')">
+        + Cadastrar Imóvel
+      </button>
+    </div>
+
+    <!-- Estatísticas -->
+    <div class="stats-grid">
+      <div class="card stat-card">
+        <div class="card-content flex-center">
+          <span class="stat-icon">🏠</span>
+          <div>
+            <p class="stat-label">Total de Imóveis</p>
+            <p class="stat-number" id="total-properties">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-content flex-center">
+          <span class="stat-icon">👥</span>
+          <div>
+            <p class="stat-label">Interessados</p>
+            <p class="stat-number" id="total-interests">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-content flex-center">
+          <span class="stat-icon">📈</span>
+          <div>
+            <p class="stat-label">Para Venda</p>
+            <p class="stat-number" id="total-sales">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-content flex-center">
+          <span class="stat-icon">📅</span>
+          <div>
+            <p class="stat-label">Para Aluguel</p>
+            <p class="stat-number" id="total-rentals">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meus Imóveis -->
+    <div class="card mt-6">
+      <div class="card-header">
+        <h2 class="card-title">Meus Imóveis</h2>
+        <p class="card-subtitle">Gerencie todos os seus imóveis cadastrados</p>
+      </div>
+    </div>
+
+    <div id="properties-list" class="properties-grid mt-6">
+      <!-- Exemplo de imóvel vazio -->
+      <div class="card empty-card">
+        <div class="card-content text-center">
+          <span class="stat-icon mb-2">🏠</span>
+          <h3>Nenhum imóvel cadastrado</h3>
+          <p>Comece cadastrando seu primeiro imóvel para começar a vender!</p>
+          <button class="btn btn-primary mt-2" onclick="alert('Cadastrar Primeiro Imóvel')">
+            + Cadastrar Primeiro Imóvel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
