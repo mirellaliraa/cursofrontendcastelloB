@@ -7,14 +7,14 @@
         <p class="card-subtitle">Acesse sua área exclusiva na Prime Imóveis</p>
       </div>
       <div class="card-content">
-        <form id="login-form">
+        <form id="login-form" (ngSubmit)="onSubmit()" #form="ngForm">
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input id="email" type="email" placeholder="seu@email.com" />
+            <input id="email" name="email" type="email" placeholder="seu@email.com" [(ngModel)]=email required/>
           </div>
           <div class="form-group">
             <label for="password">Senha</label>
-            <input id="password" type="password" placeholder="Sua senha" />
+            <input id="password" name="senha" type="password" placeholder="Sua senha" [(ngModel)]=senha required />
           </div>
 
           <div id="error-msg" class="alert hidden"></div>

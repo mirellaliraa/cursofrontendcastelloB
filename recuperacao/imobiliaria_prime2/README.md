@@ -1,59 +1,115 @@
-# ImobiliariaPrime2
+# 🏠 Imobiliária Prime
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+## 📌 Levantamento de Requisitos
 
-## Development server
+### 🎯 Objetivos SMART
+- **Específico:** Desenvolver uma aplicação web que permita cadastro e login de clientes e corretores de imóveis, com autenticação e autorização baseadas em perfis.  
+- **Mensurável:** Entregar uma aplicação funcional com protótipos, diagramas, código-fonte completo e README documentado dentro do prazo.  
+- **Atingível:** Utilizar tecnologias já estudadas (Angular, JSON Server, SCSS, Angular Material), além de aplicar conceitos de guardas de rota e LocalStorage.  
+- **Realista:** Criar uma plataforma imobiliária onde clientes podem demonstrar interesse em imóveis e corretores podem gerenciar seus anúncios.  
+- **Tempo:** 3 semanas.  
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+### ✅ Requisitos Funcionais
+- **Usuário não autenticado (visitante):**
+  - Visualizar página inicial com destaques.  
+  - Buscar imóveis disponíveis.  
+  - Ver detalhes de imóveis.  
+  - Criar conta como **cliente**.  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Cliente (logado):**
+  - Todas as funcionalidades públicas.  
+  - Marcar imóveis como **Tenho Interesse**.  
+  - Visualizar lista de interesses.  
+  - Editar perfil.  
 
-## Code scaffolding
+- **Corretor (logado):**
+  - Login com credenciais já criadas pelo administrador.  
+  - CRUD completo dos seus próprios imóveis.  
+  - Acesso ao **Dashboard de Imóveis**.  
+  - Visualizar lista de clientes interessados.  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+### ⚙️ Requisitos Não-Funcionais
+- O sistema deve ser **responsivo**.  
+- O sistema deve ser **seguro**, restringindo acesso por tipo de usuário.  
+- Armazenamento de sessão via **LocalStorage**.  
+- Autenticação e autorização com **guardas de rota**.  
+- Interface amigável e intuitiva, seguindo identidade visual definida.  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### 👥 Recursos Humanos
+- Projeto individual.
+- Papéis definidos:
+  - **Frontend**: implementação em Angular.  
+  - **UI/UX**: protótipos no Figma.  
+  - **Database/Backend**: configuração do JSON Server.  
+  - **Documentação**: README, diagramas e relatórios.  
 
-## Building
+---
 
-To build the project run:
+### 💻 Recursos Tecnológicos
+- **Figma** → prototipagem de telas.  
+- **Angular 16+** → framework para frontend SPA.  
+- **JSON Server** → simulação de backend.  
+- **Reactive Forms** → gerenciamento de formulários.  
+- **LocalStorage** → persistência de sessão do usuário.  
+- **Guardas de Rota (AuthGuard, CorretorGuard)** → segurança de acesso.  
+- **SCSS** → estilização.  
+- **Angular Material** → componentes de UI e feedback (snackbars).  
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📊 Diagrama de Fluxo
 
-## Running unit tests
+```mermaid
+flowchart TD
+    Start[Início] --> Login{Usuário já possui conta?}
+    Login -- Não --> RegistroCliente[Registrar Cliente]
+    Login -- Sim --> Autenticar[Login com Email/Senha]
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+    Autenticar --> Perfil{Tipo de Usuário}
+    Perfil -- Cliente --> MeusInteresses[Meus Interesses]
+    Perfil -- Cliente --> BuscarImoveis[Buscar Imóveis]
+    Perfil -- Corretor --> Dashboard[Dashboard de Imóveis]
+    Perfil -- Corretor --> CRUDImoveis[CRUD de Imóveis]
+    BuscarImoveis --> DetalhesImovel[Visualizar Detalhes]
+    DetalhesImovel --> Interesse[Marcar Interesse]
 
-```bash
-ng test
-```
+    Interesse --> MeusInteresses
+    CRUDImoveis --> Dashboard
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📊 Diagrama de classes 
 
-```bash
-ng e2e
-```
+classDiagram
+    class Usuario {
+      +id: number
+      +nome: string
+      +email: string
+      +senha: string
+      +tipo: string
+    }
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+    class Cliente {
+      +meusInteresses(): void
+    }
 
-## Additional Resources
+    class Corretor {
+      +dashboardImoveis(): void
+    }
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    class Imovel {
+      +id: number
+      +titulo: string
+      +corretorId: number
+      +tipo: string
+      +cidade: string
+      +preco: number
+      +descricao: string
+      +imagemUrl: string
+    }
