@@ -22,10 +22,8 @@ export class Login {
         if (usuarios && usuarios.length > 0) {
           const usuario = usuarios[0];
 
-          // salvar no localStorage
           this.auth.usuarioAtual(usuario);
 
-          // redirecionar de acordo com o tipo
           if (usuario.tipo === 'cliente') {
             this.router.navigate(['/meus-interesses']);
           } else if (usuario.tipo === 'corretor') {

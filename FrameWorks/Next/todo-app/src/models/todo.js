@@ -1,7 +1,6 @@
 // montar o schema da tabela
 
 import mongoose from "mongoose";
-import { type } from "os";
 
 //function para definir o schema
 const TodoSchema = new mongoose.Schema({
