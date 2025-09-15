@@ -8,7 +8,7 @@ import { Observable, switchMap, throwError, map } from 'rxjs';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:3000/usuarios';
-  private readonly CHAVE_AUTH = 'usuarioLogado';
+  private readonly CHAVE_AUTH = '';
 
 
   constructor(private router: Router, private http: HttpClient) { }
