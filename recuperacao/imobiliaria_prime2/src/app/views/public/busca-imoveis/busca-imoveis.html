@@ -1,34 +1,23 @@
 <section class="hero-section">
   <section class="featured-section">
-  <div class="container">
-    <div class="text-center mb-16">
-      <h2 class="title">Propriedades em Destaque</h2>
-      <p class="subtitle">
-        Explore nossa seleção exclusiva de imóveis premium
-      </p>
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="title">Propriedades em Destaque</h2>
+        <p class="subtitle">
+          Explore nossa seleção exclusiva de imóveis premium
+        </p>
+      </div>
+
+      <div id="property-grid" class="property-grid">
+        <div class="propety-card" *ngFor="let imovel of imoveis">
+          <img [src]="imovel.imagemUrl" alt="..." class="property-image"/>
+          <h3>{{imovel.titulo}}</h3>
+          <p><strong>Tipo:</strong> {{imovel.tipo}}</p>
+          <p><strong>Cidade:</strong> {{imovel.cidade}}</p>
+          <p><strong>Preço:</strong> {{imovel.preco}}</p>
+          <button class="btn outline" [routerLink]="['/imovel', imovel.id]">Ver detalhes</button>
+        </div>
+      </div>
     </div>
-
-    <!-- Lista de imóveis -->
-    <div id="property-grid" class="property-grid"></div>
-
-    <div id="no-results" class="text-center py-12" style="display:none;">
-      <p class="subtitle">Nenhum imóvel encontrado com os filtros selecionados.</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="text-center mb-12">
-      <h2 class="title">Encontre seu Imóvel Ideal</h2>
-      <p class="subtitle">
-        Use nossa busca avançada para encontrar exatamente o que você procura
-      </p>
-    </div>
-
-    <!-- Barra de busca -->
-    <div class="search-bar mb-12">
-      <input type="text" id="search-input" placeholder="Digite bairro, cidade ou tipo de imóvel" />
-      <button id="search-btn">Buscar</button>
-    </div>
-  </div>
-
+  </section>
 </section>

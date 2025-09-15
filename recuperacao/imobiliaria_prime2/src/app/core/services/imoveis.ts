@@ -11,12 +11,12 @@ export class Imoveis {
 
   constructor(private http: HttpClient) { }
 
-  getImovelById(id: number): Observable<Imovel[]>{
-    return this.http.get<Imovel[]>(`${this.apiUrl}?id=${id}`);
+  getImoveis(): Observable<Imovel[]> {
+    return this.http.get<Imovel[]>(this.apiUrl);
   }
 
-  getImovels(): Observable<Imovel[]> {
-    return this.http.get<Imovel[]>(this.apiUrl);
+  getImovelById(id: number): Observable<Imovel>{
+    return this.http.get<Imovel>(`${this.apiUrl}/${id}`);
   }
 
   createImovel(imovel: Imovel): Observable<Imovel[]>{
@@ -24,17 +24,10 @@ export class Imoveis {
   }
 
   updateImovel(id: number, imovel: Imovel): Observable<Imovel>{
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<Imovel>(url, imovel);
+    return this.http.put<Imovel>(`${this.apiUrl}/${id}`, imovel);
   }
 
-  deleteImovel(id: number): Observable<Imovel[]>{
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<Imovel[]>(url);
+  deleteImovel(id: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
-  listarTodos(): Observable<any[]> {
-    return this.http.get<any[]>('/api/imoveis');
-  }
-
 }
