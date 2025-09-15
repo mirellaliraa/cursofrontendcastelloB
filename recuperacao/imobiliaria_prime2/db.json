@@ -106,6 +106,21 @@
       "id": "1",
       "clienteId": 2,
       "imovelId": 1
+    },
+    {
+      "id": "c194",
+      "clienteId": "2",
+      "imovelId": "1"
+    },
+    {
+      "id": "2384",
+      "clienteId": "2",
+      "imovelId": "1"
+    },
+    {
+      "id": "27e5",
+      "clienteId": "2",
+      "imovelId": "1"
     }
   ]
 }
