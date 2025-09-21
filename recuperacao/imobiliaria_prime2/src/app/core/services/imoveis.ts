@@ -19,8 +19,8 @@ export class Imoveis {
     return this.http.get<Imovel>(`${this.apiUrl}/${id}`);
   }
 
-  createImovel(imovel: Imovel): Observable<Imovel[]>{
-    return this.http.post<Imovel[]>(this.apiUrl, imovel);
+  createImovel(imovel: any): Observable<Imovel>{
+    return this.http.post<Imovel>(this.apiUrl, imovel);
   }
 
   updateImovel(id: number, imovel: Imovel): Observable<Imovel>{

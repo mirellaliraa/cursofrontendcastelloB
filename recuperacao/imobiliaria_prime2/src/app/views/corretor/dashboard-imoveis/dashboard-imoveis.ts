@@ -13,28 +13,33 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './dashboard-imoveis.css'
 })
 export class DashboardImoveis implements OnInit {
-  imoveis: Imovel[] = []; 
+  imoveis: Imovel[] = [];
   mostrarFormulario = false;
 
   novoImovel: Imovel = new Imovel(0, "", 0, "", "", 0, "", "");
 
-  constructor(private imoveisService: Imoveis, private auth: AuthService) {}
+  constructor(private imoveisService: Imoveis, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.listarImoveis();
   }
 
-  listarImoveis(): void{
+  listarImoveis(): void {
     this.imoveisService.getImoveis().subscribe({
-      next: (dados) => (this.imoveis = dados),
+      next: (dados) => {
+        this.imoveis = dados;
+        console.log('Imóveis carregados:', this.imoveis);
+      },
       error: (err) => console.error('Erro ao buscar imóveis:', err),
     });
   }
 
-  cadastrarImovel(): void{
+  cadastrarImovel(): void {
     const usuario = this.auth.usuarioAtual();
 
-    const imovelParaSalvar = { ...this.novoImovel, corretorId: usuario.id };
+    const { id, ...dados } = this.novoImovel;
+
+    const imovelParaSalvar = { ...dados, corretorId: usuario.id };
 
     this.imoveisService.createImovel(imovelParaSalvar).subscribe(() => {
       this.listarImoveis();
@@ -43,23 +48,24 @@ export class DashboardImoveis implements OnInit {
     });
   }
 
-  AtualizarImovel(id:any):void{
-    this.imoveisService.updateImovel(id,this.novoImovel).subscribe(
-      () =>{
+  AtualizarImovel(id: any): void {
+    this.imoveisService.updateImovel(id, this.novoImovel).subscribe(
+      () => {
         this.novoImovel = new Imovel(0, '', 0, '', '', 0, '', '');
         this.listarImoveis();
-      }, 
-      (error) => {console.error("Erro ao atualizar vaga: ", error);
+      },
+      (error) => {
+        console.error("Erro ao atualizar vaga: ", error);
       }
     );
   }
 
-  excluirVaga(id:any): void{
+  excluirVaga(id: any): void {
     this.imoveisService.deleteImovel(id).subscribe(
-      () =>{
+      () => {
         this.novoImovel = new Imovel(0, '', 0, '', '', 0, '', '');
         this.listarImoveis();
-      }, 
+      },
       (error) => {
         console.error("Erro ao deletar vaga: ", error);
       }

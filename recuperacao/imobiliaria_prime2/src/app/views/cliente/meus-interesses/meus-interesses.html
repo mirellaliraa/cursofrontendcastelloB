@@ -1,30 +1,34 @@
 <div class="client-interests-page">
-    <div class="card mb-6">
-      <div class="card-header">
-        <h2 class="card-title">
-          Meus Interesses
-        </h2>
-      </div>
+  <div class="card mb-6">
+    <div class="card-header">
+      <h2 class="card-title">Meus Interesses</h2>
     </div>
-
-    <div *ngIf="imoveisInteressados.length > 0; else semInteresses">
-      <div class="property-grid">
-        <div class="property-card" *ngFor="let imovel of imoveisInteressados">
-          <img [src]="'assets/img/' + imovel.imagemUrl" alt="Imagem do imóvel" class="property-img" />
-
-          <div class="property-info">
-            <h2>{{ imovel.titulo }}</h2>
-            <p><strong>Tipo:</strong> {{ imovel.tipo }}</p>
-            <p><strong>Cidade:</strong> {{ imovel.cidade }}</p>
-            <p><strong>Preço:</strong> R$ {{ imovel.preco }}</p>
-          </div>
-            <button id="btn-interest" class="btn-outline" [routerLink]="['/imovel', imovel.id]">Ver detalhes</button>
-        </div>
-      </div>
-    </div>
-
-    <ng-template #semInteresses>
-      <p class="no-data">Você ainda não demonstrou interesse em nenhum imóvel.</p>
-    </ng-template>
   </div>
 
+  <!-- Verifica se há imóveis no array 'imoveis' -->
+  <div *ngIf="imoveisInteressados.length > 0; else semInteresses">
+    <div class="property-grid">
+      <!-- Itera sobre o array 'imoveis' -->
+      <div class="property-card" *ngFor="let imovel of imoveisInteressados">
+        <img [src]="'assets/img/' + imovel.imagemUrl" alt="Imagem do imóvel" class="property-img" />
+
+        <div class="property-info">
+          <h2>{{ imovel.titulo }}</h2>
+          <p><strong>Tipo:</strong> {{ imovel.tipo }}</p>
+          <p><strong>Cidade:</strong> {{ imovel.cidade }}</p>
+          <p><strong>Preço:</strong> R$ {{ imovel.preco }}</p>
+        </div>
+
+        <!-- Botão com routerLink correto -->
+        <button class="btn-outline" [routerLink]="['/imovel', imovel.id]">
+          Ver detalhes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template para quando não há imóveis -->
+  <ng-template #semInteresses>
+    <p class="no-data">Você ainda não demonstrou interesse em nenhum imóvel.</p>
+  </ng-template>
+</div>

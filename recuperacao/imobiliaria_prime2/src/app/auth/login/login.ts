@@ -24,7 +24,7 @@ export class Login {
           const usuario = this.auth.usuarioAtual();
 
           if (usuario.tipo === 'cliente') {
-            this.router.navigate(['/meus-interesses']);
+            this.router.navigate(['']);
           } else if (usuario.tipo === 'corretor') {
             this.router.navigate(['/dashboard']);
           } else {

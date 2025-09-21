@@ -32,7 +32,7 @@ export class MeusInteresses implements OnInit {
     this.interesseService.getInteressesByCliente(usuario.id).subscribe({
       next: (interesses) => {
         this.imoveisInteressados = [];
-        interesses.forEach((interesse: any) => {
+        interesses.forEach((interesse) => {
           this.imoveisService.getImovelById(interesse.imovelId).subscribe({
             next: (imovel) => {
               this.imoveisInteressados.push(imovel);

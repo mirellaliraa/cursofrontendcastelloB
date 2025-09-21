@@ -41,63 +41,13 @@
       "imagemUrl": "url_da_imagem.jpg"
     },
     {
-      "id": 0,
-      "titulo": "1",
+      "id": "2",
+      "titulo": "apartamento",
       "corretorId": "1",
-      "tipo": "12",
+      "tipo": "apartamento",
       "cidade": "limeira",
-      "preco": "1200",
-      "descricao": "aaaaaaaa",
-      "imagemUrl": ""
-    },
-    {
-      "id": 0,
-      "titulo": "",
-      "corretorId": "1",
-      "tipo": "",
-      "cidade": "",
-      "preco": 0,
-      "descricao": "",
-      "imagemUrl": ""
-    },
-    {
-      "id": 0,
-      "titulo": "1",
-      "corretorId": "1",
-      "tipo": "12",
-      "cidade": "limeira",
-      "preco": "1200",
-      "descricao": "loucura",
-      "imagemUrl": ""
-    },
-    {
-      "id": 0,
-      "titulo": "",
-      "corretorId": "1",
-      "tipo": "",
-      "cidade": "",
-      "preco": 0,
-      "descricao": "",
-      "imagemUrl": ""
-    },
-    {
-      "id": 0,
-      "titulo": "aaaaaa",
-      "corretorId": "1",
-      "tipo": "123",
-      "cidade": "limeira",
-      "preco": "1300",
-      "descricao": "aaaaaaaaaa",
-      "imagemUrl": ""
-    },
-    {
-      "id": 0,
-      "titulo": "",
-      "corretorId": "1",
-      "tipo": "",
-      "cidade": "",
-      "preco": 0,
-      "descricao": "",
+      "preco": "1500",
+      "descricao": "apartamento com vista pro mar",
       "imagemUrl": ""
     }
   ],
@@ -108,17 +58,7 @@
       "imovelId": 1
     },
     {
-      "id": "c194",
-      "clienteId": "2",
-      "imovelId": "1"
-    },
-    {
-      "id": "2384",
-      "clienteId": "2",
-      "imovelId": "1"
-    },
-    {
-      "id": "27e5",
+      "id": "2",
       "clienteId": "2",
       "imovelId": "1"
     }
