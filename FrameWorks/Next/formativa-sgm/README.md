@@ -124,3 +124,24 @@ graph TD
     caso5 -.-> caso1
 
 ```
+
+3. ### Diagrama de fluxo (Login e Acesso ao Dashboard)
+Detalhar o passo a passo que um usuário segue para se autenticar no sistema e acessar o dashboard
+
+#### Explicação:
+- O fluxo começa quando o usuário acessa a tela de login
+- Insere as credenciais(email e senha)
+- O sistema verifica se as credenciais são válidas
+    - se sim: gera um JWT (token) => dashboard
+    - se não: mensagem de erro e usuário permanece na tela de login
+
+```mermaid
+
+graph TD
+    A[Início] --> B{Acessa a tela de login}
+    B --> C[Preencher email e senha]
+    C --> D{Valida as credenciais}
+    D --> Sim --> E[Gera um token JWT]
+    E --> F[Dashboard]
+    D --> Não --> K[Mensagem de erro]
+    K --> B
