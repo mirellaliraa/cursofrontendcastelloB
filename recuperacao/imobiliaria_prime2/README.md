@@ -126,3 +126,5 @@ classDiagram
     Usuario <|-- Corretor
     Corretor "1" --> "N" Imovel
     Cliente "N" --> "N" Imovel : Interesse
+
+```
