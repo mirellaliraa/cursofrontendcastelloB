@@ -145,3 +145,22 @@ graph TD
     E --> F[Dashboard]
     D --> Não --> K[Mensagem de erro]
     K --> B
+
+```
+
+## Análise de risco
+
+# Matriz de análise de risco do projeot SGM
+
+A tabela abaixo apresenta os riscos identificados no projeot **SGM**, organizados por categoria, junto com a probabilidade, impacto e estratégias de mitigação propostas.
+
+---
+
+## Riscos Técnicos
+
+| ID | Riscos    | Probabilidade
+
+
+https://www.figma.com/design/iJJJo1AQgHweSdfUuSSETs/Untitled?node-id=0-1&m=dev&t=XuQkJfUSQItXrI6X-1
+
+https://www.figma.com/design/iJJJo1AQgHweSdfUuSSETs/Untitled?node-id=0-1&t=XuQkJfUSQItXrI6X-1
