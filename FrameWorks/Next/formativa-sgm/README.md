@@ -94,11 +94,11 @@ Ilustrar as interações dos diferentes tipos de usuários (atores) com as funci
 ```mermaid
 graph TD
     subgraph "SGM"
-        caso1 ([Fazer login])
-        caso2 ([Gerenciar ordens de serviço - CRUD])
-        caso3 ([Gerenciar equipamentos - CRUD])
-        caso4 ([Gerenciar usuários])
-        caso5 ([Acessar o dashboard])
+        caso1([Fazer login])
+        caso2([Gerenciar ordens de serviço - CRUD])
+        caso3([Gerenciar equipamentos - CRUD])
+        caso4([Gerenciar usuários])
+        caso5([Acessar o dashboard])
     end
 
     Tecnico([Técnico de manutenção])
