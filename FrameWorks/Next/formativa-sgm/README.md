@@ -93,7 +93,7 @@ Ilustrar as interações dos diferentes tipos de usuários (atores) com as funci
 
 ```mermaid
 graph TD
-    subgraph "SGM"
+    subGraph "SGM"
         caso1 ([Fazer login])
         caso2 ([Gerenciar ordens de serviço - CRUD])
         caso3 ([Gerenciar equipamentos - CRUD])
