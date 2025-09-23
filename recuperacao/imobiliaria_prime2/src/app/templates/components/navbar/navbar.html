@@ -2,30 +2,37 @@
   <div class="navbar-container">
     <a routerLink="/" class="navbar-logo">Imobiliaria Prime</a>
 
-    <div class="navbar-links">
-
-      <!-- Usuário logado -->
-      <span *ngIf="auth?.isAuthenticated()">Bem vindo, {{ auth.usuarioAtual()?.nome }}</span>
-      <button *ngIf="auth?.isAuthenticated()" (click)="auth.logout()">Sair</button>
-
-      <!-- Links específicos -->
-      <a *ngIf="auth?.getPerfilUsuario() === 'corretor'" routerLink="/dashboard" class="navLink">
-        <button class="btn-outline">Dashboard</button>
-      </a>
-
-      <a *ngIf="auth?.getPerfilUsuario() === 'cliente'" routerLink="/meus-interesses" class="navLink">
-        <button class="btn-outline">Meus interesses</button>
-      </a>
-    </div>
-
-    <!-- Botões login/cadastro -->
     <div class="navbar-buttons">
-      <a *ngIf="!auth?.isAuthenticated()" routerLink="/login" class="navLink">
-        <button class="btn-outline">Entrar</button>
-      </a>
-      <a *ngIf="!auth?.isAuthenticated()" routerLink="/registrar" class="navLink">
-        <button class="btn-primary">Cadastrar</button>
-      </a>
+
+      @if (auth.isAuthenticated()) {
+        <span>Bem-vindo, {{ auth.usuarioAtual().nome }}</span>
+        <a routerLink="/login">
+        <button (click)="auth.logout()" class="btn-outline">Sair</button>
+        </a>
+      }
+
+      @if (auth.getPerfilUsuario() === 'corretor') {
+        <a routerLink="/dashboard" class="navLink">
+          <button class="btn-primary">Dashboard</button>
+        </a>
+      }
+
+      @if (auth.getPerfilUsuario() === 'cliente') {
+        <a routerLink="/meus-interesses" class="navLink">
+          <button class="btn-primary">Meus Interesses</button>
+        </a>
+      }
+
+      @if (!auth.isAuthenticated()) {
+        <a routerLink="/login" class="navLink">
+          <button class="btn-outline">Entrar</button>
+        </a>
+        <a routerLink="/register-cliente" class="navLink">
+          <button class="btn-primary">Cadastrar</button>
+        </a>
+      }
     </div>
   </div>
 </nav>
+
+

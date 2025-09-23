@@ -1,3 +1,5 @@
+READ.ME
+
 # 🏠 Imobiliária Prime
 
 ## 📌 Levantamento de Requisitos
@@ -113,3 +115,14 @@ classDiagram
       +descricao: string
       +imagemUrl: string
     }
+
+    class Interesse {
+      +id: number
+      +clienteId: number
+      +imovelId: number
+    }
+
+    Usuario <|-- Cliente
+    Usuario <|-- Corretor
+    Corretor "1" --> "N" Imovel
+    Cliente "N" --> "N" Imovel : Interesse

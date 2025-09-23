@@ -11,30 +11,23 @@ export class Imoveis {
 
   constructor(private http: HttpClient) { }
 
-  getImovelById(id: number): Observable<Imovel[]>{
-    return this.http.get<Imovel[]>(`${this.apiUrl}?id=${id}`);
-  }
-
-  getImovels(): Observable<Imovel[]> {
+  getImoveis(): Observable<Imovel[]> {
     return this.http.get<Imovel[]>(this.apiUrl);
   }
 
-  createImovel(imovel: Imovel): Observable<Imovel[]>{
-    return this.http.post<Imovel[]>(this.apiUrl, imovel);
+  getImovelById(id: number): Observable<Imovel>{
+    return this.http.get<Imovel>(`${this.apiUrl}/${id}`);
+  }
+
+  createImovel(imovel: any): Observable<Imovel>{
+    return this.http.post<Imovel>(this.apiUrl, imovel);
   }
 
   updateImovel(id: number, imovel: Imovel): Observable<Imovel>{
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<Imovel>(url, imovel);
+    return this.http.put<Imovel>(`${this.apiUrl}/${id}`, imovel);
   }
 
-  deleteImovel(id: number): Observable<Imovel[]>{
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<Imovel[]>(url);
+  deleteImovel(id: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
-  listarTodos(): Observable<any[]> {
-    return this.http.get<any[]>('/api/imoveis');
-  }
-
 }

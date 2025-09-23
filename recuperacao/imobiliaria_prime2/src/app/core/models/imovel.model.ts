@@ -1,11 +1,12 @@
 export class Imovel {
-    constructor( 
-        public id: number,
-        public titulo: string,
-        public corretorId: number,
-        public tipo: string, 
-        public cidade: string, 
-        public preco: number,
-        public descricao: string, 
-        public imagemUrl: string, 
-    ){}}
+  constructor(
+    public id?: number, 
+    public titulo: string = "",
+    public corretorId: number = 0,
+    public tipo: string = "",
+    public cidade: string = "",
+    public preco: number = 0,
+    public descricao: string = "",
+    public imagemUrl: string = ""
+  ) {}
+}

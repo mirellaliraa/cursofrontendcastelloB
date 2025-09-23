@@ -2,14 +2,14 @@
   "usuarios": [
     {
       "id": "1",
-      "nome": "Carlos Corretor",
+      "nome": "Carlos Costa",
       "email": "corretor@prime.com",
       "senha": "123",
       "tipo": "corretor"
     },
     {
       "id": "2",
-      "nome": "Ana Cliente",
+      "nome": "Ana Capim",
       "email": "cliente@email.com",
       "senha": "123",
       "tipo": "cliente"
@@ -39,6 +39,16 @@
       "preco": 750000,
       "descricao": "Lindo apartamento com 3 quartos...",
       "imagemUrl": "url_da_imagem.jpg"
+    },
+    {
+      "id": "2",
+      "titulo": "apartamento",
+      "corretorId": "1",
+      "tipo": "apartamento",
+      "cidade": "limeira",
+      "preco": "1500",
+      "descricao": "apartamento com vista pro mar",
+      "imagemUrl": ""
     }
   ],
   "interesses": [
@@ -46,6 +56,11 @@
       "id": "1",
       "clienteId": 2,
       "imovelId": 1
+    },
+    {
+      "id": "2",
+      "clienteId": "2",
+      "imovelId": "1"
     }
   ]
 }

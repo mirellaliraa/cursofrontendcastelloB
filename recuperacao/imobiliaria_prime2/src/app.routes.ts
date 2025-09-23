@@ -7,6 +7,7 @@ import { MeusInteresses } from './app/views/cliente/meus-interesses/meus-interes
 import { DashboardImoveis } from './app/views/corretor/dashboard-imoveis/dashboard-imoveis';
 import { authGuard } from './app/core/guards/auth-guard';
 import { corretorGuard } from './app/core/guards/corretor-guard';
+import { CardImovel } from './app/templates/components/card-imovel/card-imovel';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -15,4 +16,5 @@ export const routes: Routes = [
     {path: 'registrar', component: RegisterCliente},
     {path: 'meus-interesses', component: MeusInteresses},
     {path: 'dashboard', component: DashboardImoveis},
+    {path: 'imovel/:id', component: CardImovel}
 ];
