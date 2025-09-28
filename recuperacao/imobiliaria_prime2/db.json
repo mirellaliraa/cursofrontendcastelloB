@@ -38,29 +38,44 @@
       "cidade": "Santos",
       "preco": 750000,
       "descricao": "Lindo apartamento com 3 quartos...",
-      "imagemUrl": "url_da_imagem.jpg"
+      "imagemUrl": "https://i.ibb.co/Wq5RVZB/2b42e8e480fa69803230c01549d34dc4.jpg"
     },
     {
       "id": "2",
-      "titulo": "apartamento",
-      "corretorId": "1",
-      "tipo": "apartamento",
-      "cidade": "limeira",
-      "preco": "1500",
-      "descricao": "apartamento com vista pro mar",
+      "titulo": "ussr",
+      "corretorId": 0,
+      "tipo": "casa",
+      "cidade": "sao paulo",
+      "preco": "50000",
+      "descricao": "back to ussr",
       "imagemUrl": ""
+    },
+    {
+      "id": "0bd7",
+      "titulo": "casinha",
+      "corretorId": "1",
+      "tipo": "Casa para alugar",
+      "cidade": "Jundiaí",
+      "preco": "2500",
+      "descricao": "casinha boa",
+      "imagemUrl": "https://i.pinimg.com/1200x/e2/28/5e/e2285e5d45b574ea3517e4a18a866141.jpg"
     }
   ],
   "interesses": [
     {
-      "id": "1",
-      "clienteId": 2,
-      "imovelId": 1
-    },
-    {
-      "id": "2",
+      "id": "fa77",
       "clienteId": "2",
       "imovelId": "1"
+    },
+    {
+      "id": "9fb6",
+      "clienteId": "2",
+      "imovelId": "2"
+    },
+    {
+      "id": "8a7f",
+      "clienteId": "2",
+      "imovelId": "c65e"
     }
   ]
 }

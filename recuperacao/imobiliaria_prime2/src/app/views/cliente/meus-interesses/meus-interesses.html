@@ -9,20 +9,21 @@
   <div *ngIf="imoveisInteressados.length > 0; else semInteresses">
     <div class="property-grid">
       <!-- Itera sobre o array 'imoveis' -->
-      <div class="property-card" *ngFor="let imovel of imoveisInteressados">
-        <img [src]="'assets/img/' + imovel.imagemUrl" alt="Imagem do imóvel" class="property-img" />
+      <div class="property-card" *ngFor="let item of imoveisInteressados">
+        <img [src]="item.imovel.imagemUrl" alt="..." class="property-image"/>
 
         <div class="property-info">
-          <h2>{{ imovel.titulo }}</h2>
-          <p><strong>Tipo:</strong> {{ imovel.tipo }}</p>
-          <p><strong>Cidade:</strong> {{ imovel.cidade }}</p>
-          <p><strong>Preço:</strong> R$ {{ imovel.preco }}</p>
+          <h2>{{ item.imovel.titulo }}</h2>
+          <p><strong>Tipo:</strong> {{ item.imovel.tipo }}</p>
+          <p><strong>Cidade:</strong> {{ item.imovel.cidade }}</p>
+          <p><strong>Preço:</strong> R$ {{ item.imovel.preco }}</p>
         </div>
 
         <!-- Botão com routerLink correto -->
-        <button class="btn-outline" [routerLink]="['/imovel', imovel.id]">
+        <button class="btn-outline" [routerLink]="['/imovel', item.imovel.id]">
           Ver detalhes
         </button>
+        <button class="btn-outline" (click)="removerInteresse(item.interesseId)">Remover interesse</button>
       </div>
     </div>
   </div>
