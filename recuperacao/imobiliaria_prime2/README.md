@@ -11,15 +11,12 @@ Criar uma plataforma web responsiva para cadastro e gerenciamento de imóveis.
 Permitir login e autenticação com perfis diferenciados (Cliente e Corretor).
 Facilitar o contato entre clientes interessados e corretores responsáveis.
 Garantir usabilidade, segurança e persistência de dados.
-### **Público-Alvo**
-**Clientes:** pessoas interessadas em buscar imóveis e marcar favoritos.
-**Corretores:** profissionais que anunciam e gerenciam seus imóveis.
-**Administrador:** responsável por gerenciar credenciais de corretores.
+
 ## Requisitos
 ### Funcionais
-**Visitante:** visualizar imóveis disponíveis e registrar conta como cliente.
-**Cliente:** marcar imóveis de interesse, editar perfil e visualizar favoritos.
-**Corretor:** CRUD completo de imóveis, dashboard de anúncios e lista de clientes interessados.
+- **Visitante:** visualizar imóveis disponíveis e registrar conta como cliente.
+- **Cliente:** marcar imóveis de interesse, editar perfil e visualizar favoritos.
+- **Corretor:** CRUD completo de imóveis, dashboard de anúncios e lista de clientes interessados.
 ### Não-Funcionais
 Interface responsiva e intuitiva.
 Segurança de acesso com guardas de rota.
