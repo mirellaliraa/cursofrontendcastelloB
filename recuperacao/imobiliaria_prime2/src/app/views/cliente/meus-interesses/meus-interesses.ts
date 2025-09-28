@@ -48,14 +48,14 @@ export class MeusInteresses implements OnInit {
 
   removerInteresse(interesseId: number): void {
     if (confirm('Tem certeza que deseja remover esse interesse?')) {
-      this.interesseService.deleteInteresse(interesseId).subscribe(
-        () => {
-          this.carregarInteresses();
+      this.interesseService.deleteInteresse(interesseId).subscribe({
+        next: () => {
+          this.imoveisInteressados = this.imoveisInteressados.filter(
+            (item) => item.interesseId !== interesseId
+          );
         },
-        (error) => {
-          console.error("Erro ao remover interesse: ", error);
-        }
-      );
+        error: (err) => console.error("Erro ao remover interesse: ", err)
+        });
     }
   }
 }

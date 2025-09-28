@@ -5,7 +5,6 @@
     </div>
   </div>
 
-  <!-- Verifica se há imóveis no array 'imoveis' -->
   <div *ngIf="imoveisInteressados.length > 0; else semInteresses">
     <div class="property-grid">
       <!-- Itera sobre o array 'imoveis' -->
@@ -19,7 +18,6 @@
           <p><strong>Preço:</strong> R$ {{ item.imovel.preco }}</p>
         </div>
 
-        <!-- Botão com routerLink correto -->
         <button class="btn-outline" [routerLink]="['/imovel', item.imovel.id]">
           Ver detalhes
         </button>
@@ -28,7 +26,6 @@
     </div>
   </div>
 
-  <!-- Template para quando não há imóveis -->
   <ng-template #semInteresses>
     <p class="no-data">Você ainda não demonstrou interesse em nenhum imóvel.</p>
   </ng-template>

@@ -37,10 +37,10 @@ export class DashboardImoveis implements OnInit {
 
   cadastrarImovel(): void {
     const usuario = this.auth.usuarioAtual();
-
     const { id, ...dados } = this.novoImovel;
-
     const imovelParaSalvar = { ...dados, corretorId: usuario.id };
+
+    this.mostrarFormulario = false;
 
     this.imoveisService.createImovel(imovelParaSalvar).subscribe(() => {
       this.listarImoveis();

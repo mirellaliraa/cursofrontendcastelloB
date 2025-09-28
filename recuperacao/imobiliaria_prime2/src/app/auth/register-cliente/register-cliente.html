@@ -19,7 +19,7 @@
 
           <div class="form-group">
             <label for="senha">Senha *</label>
-            <input id="senha" type="password" [(ngModel)]="senha" required/>
+            <input id="senha" name="senha" type="password" [(ngModel)]="senha" required/>
           </div>
 
           <div class="form-group">
@@ -34,7 +34,7 @@
         <div class="text-center mt-6">
           <p class="text-sm">
             Já tem uma conta? 
-            <button class="link-btn" onclick="location.href='/login'">Entre aqui</button>
+            <a routerLink="/login" class="link-btn">Entre aqui</a>
           </p>
         </div>
       </div>

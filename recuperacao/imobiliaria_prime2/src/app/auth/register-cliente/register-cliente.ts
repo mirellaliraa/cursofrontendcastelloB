@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../core/services/auth';
 import { Cliente } from '../../core/models/cliente.model';
 import { identity, Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register-cliente',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './register-cliente.html',
   styleUrl: './register-cliente.css'
 })

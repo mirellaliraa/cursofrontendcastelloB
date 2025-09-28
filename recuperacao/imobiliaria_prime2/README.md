@@ -84,10 +84,11 @@ flowchart TD
     Interesse --> MeusInteresses
     CRUDImoveis --> Dashboard
 
----
+```
 
 ## 📊 Diagrama de classes 
 
+```mermaid
 classDiagram
     class Usuario {
       +id: number
