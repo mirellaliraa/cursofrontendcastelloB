@@ -1,67 +1,44 @@
-READ.ME
-
 # 🏠 Imobiliária Prime
 
-## 📌 Levantamento de Requisitos
+## Briefing
+### Visão Geral
 
-### 🎯 Objetivos SMART
-- **Específico:** Desenvolver uma aplicação web que permita cadastro e login de clientes e corretores de imóveis, com autenticação e autorização baseadas em perfis.  
-- **Mensurável:** Entregar uma aplicação funcional com protótipos, diagramas, código-fonte completo e README documentado dentro do prazo.  
-- **Atingível:** Utilizar tecnologias já estudadas (Angular, JSON Server, SCSS, Angular Material), além de aplicar conceitos de guardas de rota e LocalStorage.  
-- **Realista:** Criar uma plataforma imobiliária onde clientes podem demonstrar interesse em imóveis e corretores podem gerenciar seus anúncios.  
-- **Tempo:** 3 semanas.  
+O projeto Imobiliária Prime consiste no desenvolvimento de uma aplicação web para gerenciamento de imóveis, permitindo que clientes e corretores interajam em um ambiente seguro e organizado. A aplicação oferece funcionalidades de cadastro, autenticação baseada em perfis e gerenciamento de interesses em imóveis.
 
----
-
-### ✅ Requisitos Funcionais
-- **Usuário não autenticado (visitante):**
-  - Visualizar página inicial com destaques.  
-  - Buscar imóveis disponíveis.  
-  - Ver detalhes de imóveis.  
-  - Criar conta como **cliente**.  
-
-- **Cliente (logado):**
-  - Todas as funcionalidades públicas.  
-  - Marcar imóveis como **Tenho Interesse**.  
-  - Visualizar lista de interesses.  
-  - Editar perfil.  
-
-- **Corretor (logado):**
-  - Login com credenciais já criadas pelo administrador.  
-  - CRUD completo dos seus próprios imóveis.  
-  - Acesso ao **Dashboard de Imóveis**.  
-  - Visualizar lista de clientes interessados.  
-
----
-
-### ⚙️ Requisitos Não-Funcionais
-- O sistema deve ser **responsivo**.  
-- O sistema deve ser **seguro**, restringindo acesso por tipo de usuário.  
-- Armazenamento de sessão via **LocalStorage**.  
-- Autenticação e autorização com **guardas de rota**.  
-- Interface amigável e intuitiva, seguindo identidade visual definida.  
-
----
-
-### 👥 Recursos Humanos
-- Projeto individual.
-- Papéis definidos:
-  - **Frontend**: implementação em Angular.  
-  - **UI/UX**: protótipos no Figma.  
-  - **Database/Backend**: configuração do JSON Server.  
-  - **Documentação**: README, diagramas e relatórios.  
-
----
-
-### 💻 Recursos Tecnológicos
-- **Figma** → prototipagem de telas.  
-- **Angular 16+** → framework para frontend SPA.  
-- **JSON Server** → simulação de backend.  
-- **Reactive Forms** → gerenciamento de formulários.  
-- **LocalStorage** → persistência de sessão do usuário.  
-- **Guardas de Rota (AuthGuard, CorretorGuard)** → segurança de acesso.  
-- **SCSS** → estilização.  
-- **Angular Material** → componentes de UI e feedback (snackbars).  
+## Escopo
+### Objetivos
+Criar uma plataforma web responsiva para cadastro e gerenciamento de imóveis.
+Permitir login e autenticação com perfis diferenciados (Cliente e Corretor).
+Facilitar o contato entre clientes interessados e corretores responsáveis.
+Garantir usabilidade, segurança e persistência de dados.
+### **Público-Alvo**
+**Clientes:** pessoas interessadas em buscar imóveis e marcar favoritos.
+**Corretores:** profissionais que anunciam e gerenciam seus imóveis.
+**Administrador:** responsável por gerenciar credenciais de corretores.
+## Requisitos
+### Funcionais
+**Visitante:** visualizar imóveis disponíveis e registrar conta como cliente.
+**Cliente:** marcar imóveis de interesse, editar perfil e visualizar favoritos.
+**Corretor:** CRUD completo de imóveis, dashboard de anúncios e lista de clientes interessados.
+### Não-Funcionais
+Interface responsiva e intuitiva.
+Segurança de acesso com guardas de rota.
+Armazenamento de sessão no LocalStorage.
+Utilização de tecnologias modernas (Angular, SCSS, Angular Material).
+## Recursos
+### Recursos Humanos
+Projeto desenvolvido de forma individual, com papéis divididos em:
+Frontend (Angular)
+UI/UX (Figma)
+Backend simulado (JSON Server)
+Documentação (README, diagramas, relatórios)
+### Recursos Tecnológicos
+- **Figma** 
+- **Angular 16+** 
+- **JSON Server** 
+- **Reactive Forms**
+- **CSS**
+- **Guardas**
 
 ---
 
