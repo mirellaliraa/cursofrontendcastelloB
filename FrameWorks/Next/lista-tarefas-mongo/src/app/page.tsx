@@ -69,8 +69,7 @@ export default function Home(){
       </form>
       <ul>
         {tarefas.map((tarefa)=> (
-          <li key={tarefa._id.toString()}>
-            
+          <li key={tarefa.id.toString()}>
           </li>
         ))}
       </ul>
@@ -79,5 +78,5 @@ export default function Home(){
 
 }
 
-// do we neeeeeeeeeeeed anybooody ???????????????? 
-// oh i get high with a little help from my friends
+// do we neeeeeeeeeeeed anybooody ???????????????? i need somebody to love !
+// ohhh i get high with a little help from my friends
