@@ -69,7 +69,6 @@ classDiagram
       +nome: string
       +email: string
       +senha: string
-      +tipo: string
     }
 
     class Cliente {
