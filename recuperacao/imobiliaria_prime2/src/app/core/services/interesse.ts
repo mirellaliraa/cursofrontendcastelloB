@@ -10,11 +10,15 @@ export class InteresseService {
 
   constructor(private http: HttpClient) {}
 
-  createInteresse(clienteId: number, imovelId: number): Observable<any> {
+  createInteresse(clienteId: number, imovelId: string): Observable<any> {
     return this.http.post(this.apiUrl, { clienteId, imovelId });
   }
 
-  getInteressesByCliente(clienteId: number): Observable<any[]> {
+  getInteressesByCliente(clienteId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}?clienteId=${clienteId}`);
+  }
+  
+  deleteInteresse(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

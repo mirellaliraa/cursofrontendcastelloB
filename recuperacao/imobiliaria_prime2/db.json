@@ -15,17 +15,10 @@
       "tipo": "cliente"
     },
     {
-      "id": "2c3f",
+      "id": "2812",
       "nome": "rita",
       "email": "lovelyrita@gmail.com",
-      "senha": "",
-      "tipo": "cliente"
-    },
-    {
-      "id": "c867",
-      "nome": "monica",
-      "email": "monica@gmail.com",
-      "senha": "",
+      "senha": "123",
       "tipo": "cliente"
     }
   ],
@@ -38,29 +31,44 @@
       "cidade": "Santos",
       "preco": 750000,
       "descricao": "Lindo apartamento com 3 quartos...",
-      "imagemUrl": "url_da_imagem.jpg"
+      "imagemUrl": "https://i.ibb.co/Wq5RVZB/2b42e8e480fa69803230c01549d34dc4.jpg"
     },
     {
-      "id": "2",
-      "titulo": "apartamento",
+      "id": "0bd7",
+      "titulo": "casa azul com teto laranja",
       "corretorId": "1",
-      "tipo": "apartamento",
-      "cidade": "limeira",
+      "tipo": "Casa para alugar",
+      "cidade": "Jundiaí",
+      "preco": "2500",
+      "descricao": "casinha com 2 quartos e",
+      "imagemUrl": "https://i.pinimg.com/1200x/e2/28/5e/e2285e5d45b574ea3517e4a18a866141.jpg"
+    },
+    {
+      "id": "1710",
+      "titulo": "kitnet",
+      "corretorId": "1",
+      "tipo": "kitnet",
+      "cidade": "florianopolis",
       "preco": "1500",
-      "descricao": "apartamento com vista pro mar",
-      "imagemUrl": ""
+      "descricao": "kitnet com 1 banheiro e ...",
+      "imagemUrl": "https://i.ibb.co/ymTHyDnB/5f5f493b218932b2ac6f135943f92376.jpg"
     }
   ],
   "interesses": [
     {
-      "id": "1",
-      "clienteId": 2,
-      "imovelId": 1
-    },
-    {
-      "id": "2",
+      "id": "fa77",
       "clienteId": "2",
       "imovelId": "1"
+    },
+    {
+      "id": "8a7f",
+      "clienteId": "2",
+      "imovelId": "c65e"
+    },
+    {
+      "id": "8c21",
+      "clienteId": "2",
+      "imovelId": "0bd7"
     }
   ]
 }

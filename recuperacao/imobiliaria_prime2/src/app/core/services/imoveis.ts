@@ -15,19 +15,20 @@ export class Imoveis {
     return this.http.get<Imovel[]>(this.apiUrl);
   }
 
-  getImovelById(id: number): Observable<Imovel>{
+  getImovelById(id: string): Observable<Imovel> {
     return this.http.get<Imovel>(`${this.apiUrl}/${id}`);
   }
 
-  createImovel(imovel: any): Observable<Imovel>{
+
+  createImovel(imovel: any): Observable<Imovel> {
     return this.http.post<Imovel>(this.apiUrl, imovel);
   }
 
-  updateImovel(id: number, imovel: Imovel): Observable<Imovel>{
+  updateImovel(id: string, imovel: Imovel): Observable<Imovel> {
     return this.http.put<Imovel>(`${this.apiUrl}/${id}`, imovel);
   }
 
-  deleteImovel(id: number): Observable<void>{
+  deleteImovel(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

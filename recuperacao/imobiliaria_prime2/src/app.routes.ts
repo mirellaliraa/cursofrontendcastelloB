@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { Home } from './app/views/public/home/home';
 import { BuscaImoveis } from './app/views/public/busca-imoveis/busca-imoveis';
 import { Login } from './app/auth/login/login';
@@ -8,6 +8,7 @@ import { DashboardImoveis } from './app/views/corretor/dashboard-imoveis/dashboa
 import { authGuard } from './app/core/guards/auth-guard';
 import { corretorGuard } from './app/core/guards/corretor-guard';
 import { CardImovel } from './app/templates/components/card-imovel/card-imovel';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -18,3 +19,5 @@ export const routes: Routes = [
     {path: 'dashboard', component: DashboardImoveis},
     {path: 'imovel/:id', component: CardImovel}
 ];
+
+

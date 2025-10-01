@@ -15,8 +15,9 @@ import { FormsModule } from '@angular/forms';
 export class DashboardImoveis implements OnInit {
   imoveis: Imovel[] = [];
   mostrarFormulario = false;
+  modoEdicao = false;
 
-  novoImovel: Imovel = new Imovel(0, "", 0, "", "", 0, "", "");
+  novoImovel: Imovel = new Imovel('', "", 0, "", "", 0, "", "");
 
   constructor(private imoveisService: Imoveis, private auth: AuthService) { }
 
@@ -36,39 +37,48 @@ export class DashboardImoveis implements OnInit {
 
   cadastrarImovel(): void {
     const usuario = this.auth.usuarioAtual();
-
     const { id, ...dados } = this.novoImovel;
-
     const imovelParaSalvar = { ...dados, corretorId: usuario.id };
+
+    this.mostrarFormulario = false;
 
     this.imoveisService.createImovel(imovelParaSalvar).subscribe(() => {
       this.listarImoveis();
       this.mostrarFormulario = false;
-      this.novoImovel = new Imovel(0, '', 0, '', '', 0, '', '');
+      this.novoImovel = new Imovel('', '', 0, '', '', 0, '', '');
     });
+  }
+
+  editarImovel(imovel: Imovel): void {
+    this.modoEdicao = true;
+    this.mostrarFormulario = true;
+    this.novoImovel = { ...imovel }; // clona o imóvel no formulário
   }
 
   AtualizarImovel(id: any): void {
     this.imoveisService.updateImovel(id, this.novoImovel).subscribe(
       () => {
-        this.novoImovel = new Imovel(0, '', 0, '', '', 0, '', '');
+        this.novoImovel = new Imovel('', '', 0, '', '', 0, '', '');
+        this.mostrarFormulario = false;
+        this.modoEdicao = false;
         this.listarImoveis();
       },
       (error) => {
-        console.error("Erro ao atualizar vaga: ", error);
+        console.error("Erro ao atualizar imovel: ", error);
       }
     );
   }
 
-  excluirVaga(id: any): void {
+  excluirImovel(id: any): void {
+    if (confirm('Tem certeza que deseja deletar este imóvel?')) {
     this.imoveisService.deleteImovel(id).subscribe(
       () => {
-        this.novoImovel = new Imovel(0, '', 0, '', '', 0, '', '');
+        this.novoImovel = new Imovel('', '', 0, '', '', 0, '', '');
         this.listarImoveis();
       },
       (error) => {
-        console.error("Erro ao deletar vaga: ", error);
+        console.error("Erro ao deletar imovel: ", error);
       }
     );
   }
-}
+}}

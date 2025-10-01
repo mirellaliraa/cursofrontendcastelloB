@@ -1,6 +1,6 @@
 export class Imovel {
   constructor(
-    public id?: number, 
+    public id: string, 
     public titulo: string = "",
     public corretorId: number = 0,
     public tipo: string = "",
