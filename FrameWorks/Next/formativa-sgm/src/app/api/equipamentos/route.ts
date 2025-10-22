@@ -22,4 +22,3 @@ export async function POST(req:NextRequest) { // pega o conteúdo do HTML (visua
         return NextResponse.json({success:false, error:error});
     }
 }
-
