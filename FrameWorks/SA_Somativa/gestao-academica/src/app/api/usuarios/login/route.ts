@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from 'jsonwebtoken';
-import { autenticaUsuario } from "@/src/controllers/CursosController";
-
-// JWT ()
+import { autenticaUsuario } from "@/src/controllers/UsuarioController";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 if(!JWT_SECRET){
@@ -16,7 +14,7 @@ export async function POST(req: NextRequest) {
         // validar os dados
         if(!email || !senha){
             return NextResponse.json(
-                {sucess:false, error:"Usuário e senha são obrigatórios"}
+                {success: false, message: "Usuário e senha são obrigatórios"}
             );
         }
         // método de autenticação do usuário
@@ -24,7 +22,7 @@ export async function POST(req: NextRequest) {
         // se não encontrou um usuário
         if(!usuario){
             return NextResponse.json(
-                {sucess:false, error:"Usuário ou senha inválidos"}
+                {success: false, message: "Usuário ou senha inválidos"}
             );
         }
         // se foi encontrado => gerar o token => acessar as próximas páginas
@@ -43,6 +41,10 @@ export async function POST(req: NextRequest) {
             }
         });
     } catch (error) {
-        return NextResponse.json({sucess:false, error: error});
+        console.error('Erro durante o login:', error);
+        return NextResponse.json({
+            success: false, 
+            message: "Erro interno do servidor"
+        });
     }
 }

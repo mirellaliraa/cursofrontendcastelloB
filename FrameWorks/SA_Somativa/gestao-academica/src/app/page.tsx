@@ -1,13 +1,29 @@
 "use client";
 
-export default function Home(){
+export default function Home() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "10px", fontSize: "20px" }}>
+      <h1>Bem-vindo ao Sistema de Gestão Acadêmica</h1>
+      <p>Por favor, faça login para continuar.</p>
 
-  // useEffect => criar um usuário admin ao carregar o site
-  return(
-    <div>
-      <h1>Bem vinndo ao sistema de gestão de manutenção</h1>
-      <p>Por favor, faça login para continuar</p>
-      <a href="/login">Ir para login</a>
+      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "20px" }}>
+        <a href="/login">
+          <button
+            style={{
+              background: "#0070f3",
+              color: "white",
+              border: "none",
+              padding: "10px 20px",
+              marginRight: "20px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              fontSize: "16px",
+            }}
+          >
+            Ir para login
+          </button>
+        </a>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Usuario, { IUsuario } from "../models/Usuario";
 import connectMongo from "../services/mongodb"
+import bcrypt from "bcrypt";
 
 //getAll
 export const getAllUsuario = async() =>{
@@ -35,4 +36,11 @@ export const updateUsuario = async(id:string, data: Partial<IUsuario>) =>{
 export const deleteUsuario = async(id:string) =>{
     await connectMongo();
     await Usuario.findByIdAndDelete(id);
+}
+
+//autenticação
+export const autenticaUsuario = async(email: string, senha: string) => {
+    await connectMongo();
+    const usuario = await Usuario.findOne({ email, senha });
+    return usuario;
 }
