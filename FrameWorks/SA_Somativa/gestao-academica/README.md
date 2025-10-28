@@ -1,6 +1,6 @@
-# 🎓 Sistema de Gestão Acadêmica - Polyglot
+# Sistema de Gestão Acadêmica - Polyglot
 
-## 📘 Briefing
+## Briefing
 ### Visão Geral
 O **Sistema de Gestão Acadêmica** tem como objetivo modernizar o controle de informações do curso de idiomas *Polyglot*.  
 Atualmente, notas e presenças dos alunos são registradas em diários físicos, dificultando o acesso e a centralização de dados pela secretaria.  
@@ -8,7 +8,7 @@ A aplicação web busca digitalizar esse processo, oferecendo um ambiente acess�
 
 ---
 
-## 🎯 Escopo
+## Escopo
 ### Objetivos
 - Desenvolver uma **plataforma web** para gerenciamento acadêmico.
 - Permitir **login e autenticação** com diferentes perfis (Coordenador, Professor e Aluno).
@@ -18,26 +18,26 @@ A aplicação web busca digitalizar esse processo, oferecendo um ambiente acess�
 
 ---
 
-## ⚙️ Requisitos
+## Requisitos
 
 ### Requisitos Funcionais
 
-#### 👨‍💼 Coordenador
+#### Coordenador
 - Cadastrar, editar e excluir **cursos, turmas, professores e alunos**.
 - Atribuir professores a turmas.
 - Visualizar relatórios gerais de desempenho.
 
-#### 👨‍🏫 Professor
+#### Professor
 - Acessar as turmas sob sua responsabilidade.
 - Registrar **notas e presenças** dos alunos.
 - Consultar o histórico acadêmico das turmas.
 
-#### 👩‍🎓 Aluno
+#### Aluno
 - Visualizar **notas, presenças e informações da turma**.
 - Editar informações básicas do perfil.
 - Acompanhar mensagens ou comunicados da coordenação.
 
-#### 🌐 Sistema
+#### Sistema
 - Controlar o acesso via **login** (com armazenamento local de sessão).
 - Redirecionar o usuário para o **dashboard** correspondente ao seu perfil.
 - Exibir cabeçalho fixo (header) com navegação e botão de logout.
@@ -54,7 +54,7 @@ A aplicação web busca digitalizar esse processo, oferecendo um ambiente acess�
 
 ---
 
-## 🧑‍💻 Recursos
+## Recursos
 
 ### Recursos Humanos
 Projeto desenvolvido em ambiente acadêmico, com papéis definidos:
