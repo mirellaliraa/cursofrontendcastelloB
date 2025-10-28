@@ -73,90 +73,121 @@ Projeto desenvolvido em ambiente acadêmico, com papéis definidos:
 
 ---
 
-## 📊 Diagrama de Fluxo
+## Diagrama de Fluxo
 
 ```mermaid
 flowchart TD
     Start[Início] --> Login{Usuário possui conta?}
     Login -- Não --> Registrar[Registrar Usuário]
     Login -- Sim --> Autenticar[Login com Email/Senha]
-
+    
+    Registrar --> Autenticar
+    
     Autenticar --> Perfil{Tipo de Usuário}
     Perfil -- Coordenador --> DashboardCoord[Dashboard Coordenador]
     Perfil -- Professor --> DashboardProf[Dashboard Professor]
     Perfil -- Aluno --> DashboardAluno[Dashboard Aluno]
-
+    
     DashboardCoord --> CRUDCursos[Gerenciar Cursos]
     DashboardCoord --> CRUDTurmas[Gerenciar Turmas]
     DashboardCoord --> CRUDProfessores[Gerenciar Professores]
     DashboardCoord --> CRUDAlunos[Gerenciar Alunos]
-
+    
     DashboardProf --> RegistrarNotas[Registrar Notas]
     DashboardProf --> RegistrarPresencas[Registrar Presenças]
-
+    
     DashboardAluno --> VerNotas[Visualizar Notas]
     DashboardAluno --> VerPresencas[Visualizar Presenças]
+    
+    CRUDCursos --> Fim[Fim do Fluxo]
+    CRUDTurmas --> Fim
+    CRUDProfessores --> Fim
+    CRUDAlunos --> Fim
+    RegistrarNotas --> Fim
+    RegistrarPresencas --> Fim
+    VerNotas --> Fim
+    VerPresencas --> Fim
+```
 
+## Diagrama de classe
+
+```mermaid
 classDiagram
     class Usuario {
-      +id: number
-      +nome: string
-      +email: string
-      +senha: string
-      +funcao: string
+        +id: number
+        +nome: string
+        +email: string
+        +senha: string
+        +funcao: string
+        +login() void
+        +logout() void
     }
 
     class Coordenador {
-      +gerenciarCursos(): void
-      +gerenciarTurmas(): void
-      +gerenciarProfessores(): void
-      +gerenciarAlunos(): void
+        +gerenciarCursos() void
+        +gerenciarTurmas() void
+        +gerenciarProfessores() void
+        +gerenciarAlunos() void
+        +gerarRelatorios() void
     }
 
     class Professor {
-      +registrarNotas(): void
-      +registrarPresencas(): void
-      +visualizarTurmas(): void
+        +registrarNotas() void
+        +registrarPresencas() void
+        +visualizarTurmas() void
+        +consultarAlunos() void
     }
 
     class Aluno {
-      +visualizarNotas(): void
-      +visualizarPresencas(): void
+        +visualizarNotas() void
+        +visualizarPresencas() void
+        +editarPerfil() void
+        +verComunicados() void
     }
 
     class Curso {
-      +id: number
-      +nome: string
-      +descricao: string
+        +id: number
+        +nome: string
+        +descricao: string
+        +cargaHoraria: number
+        +nivel: string
     }
 
     class Turma {
-      +id: number
-      +cursoId: number
-      +professorId: number
-      +alunos: Aluno[]
+        +id: number
+        +cursoId: number
+        +professorId: number
+        +horario: string
+        +sala: string
+        +alunos: Aluno[]
     }
 
     class Nota {
-      +id: number
-      +alunoId: number
-      +turmaId: number
-      +valor: number
+        +id: number
+        +alunoId: number
+        +turmaId: number
+        +valor: number
+        +tipo: string
+        +data: Date
     }
 
     class Presenca {
-      +id: number
-      +alunoId: number
-      +turmaId: number
-      +data: Date
-      +presente: boolean
+        +id: number
+        +alunoId: number
+        +turmaId: number
+        +data: Date
+        +presente: boolean
     }
 
-    Usuario <|-- Coordenador
-    Usuario <|-- Professor
-    Usuario <|-- Aluno
-    Curso "1" --> "N" Turma
-    Turma "1" --> "N" Aluno
-    Aluno "1" --> "N" Nota
-    Aluno "1" --> "N" Presenca
-```
+    Usuario <|-- Coordenador : extends
+    Usuario <|-- Professor : extends
+    Usuario <|-- Aluno : extends
+    
+    Curso "1" --> "N" Turma : contém
+    Turma "1" --> "N" Aluno : possui
+    Turma "1" --> "1" Professor : ministrada_por
+    Aluno "1" --> "N" Nota : possui
+    Aluno "1" --> "N" Presenca : possui
+    Turma "1" --> "N" Nota : contém
+    Turma "1" --> "N" Presenca : contém
+    ```
