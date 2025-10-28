@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Sistema de Gestão Acadêmica - Polyglot
 
-## Getting Started
+## 📘 Briefing
+### Visão Geral
+O **Sistema de Gestão Acadêmica** tem como objetivo modernizar o controle de informações do curso de idiomas *Polyglot*.  
+Atualmente, notas e presenças dos alunos são registradas em diários físicos, dificultando o acesso e a centralização de dados pela secretaria.  
+A aplicação web busca digitalizar esse processo, oferecendo um ambiente acessível para coordenadores, professores e alunos.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Escopo
+### Objetivos
+- Desenvolver uma **plataforma web** para gerenciamento acadêmico.
+- Permitir **login e autenticação** com diferentes perfis (Coordenador, Professor e Aluno).
+- Centralizar o **cadastro de cursos, turmas, professores e alunos**.
+- Facilitar o **registro e visualização de notas e presenças**.
+- Garantir **usabilidade, segurança e persistência de dados**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Requisitos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Requisitos Funcionais
 
-## Learn More
+#### 👨‍💼 Coordenador
+- Cadastrar, editar e excluir **cursos, turmas, professores e alunos**.
+- Atribuir professores a turmas.
+- Visualizar relatórios gerais de desempenho.
 
-To learn more about Next.js, take a look at the following resources:
+#### 👨‍🏫 Professor
+- Acessar as turmas sob sua responsabilidade.
+- Registrar **notas e presenças** dos alunos.
+- Consultar o histórico acadêmico das turmas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 👩‍🎓 Aluno
+- Visualizar **notas, presenças e informações da turma**.
+- Editar informações básicas do perfil.
+- Acompanhar mensagens ou comunicados da coordenação.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 🌐 Sistema
+- Controlar o acesso via **login** (com armazenamento local de sessão).
+- Redirecionar o usuário para o **dashboard** correspondente ao seu perfil.
+- Exibir cabeçalho fixo (header) com navegação e botão de logout.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Requisitos Não Funcionais
+- Interface moderna e responsiva (Next.js + CSS).
+- Segurança com **LocalStorage** e validação de sessão.
+- Navegação dinâmica conforme tipo de usuário.
+- Código modular com reutilização de componentes (ex: Header, Formulários).
+- Compatibilidade com navegadores modernos.
+- Armazenamento persistente de dados (MongoDB).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧑‍💻 Recursos
+
+### Recursos Humanos
+Projeto desenvolvido em ambiente acadêmico, com papéis definidos:
+- **Frontend:** Next.js / React.
+- **Backend:** API com Node.js e MongoDB.
+- **Design:** Figma (UI/UX das telas).
+- **Documentação:** README, diagramas e relatórios técnicos.
+
+### Recursos Tecnológicos
+- **Next.js 16+**
+- **React Hooks**
+- **MongoDB**
+- **TypeScript**
+- **CSS Modules**
+- **Figma**
+
+---
+
+## 📊 Diagrama de Fluxo
+
+```mermaid
+flowchart TD
+    Start[Início] --> Login{Usuário possui conta?}
+    Login -- Não --> Registrar[Registrar Usuário]
+    Login -- Sim --> Autenticar[Login com Email/Senha]
+
+    Autenticar --> Perfil{Tipo de Usuário}
+    Perfil -- Coordenador --> DashboardCoord[Dashboard Coordenador]
+    Perfil -- Professor --> DashboardProf[Dashboard Professor]
+    Perfil -- Aluno --> DashboardAluno[Dashboard Aluno]
+
+    DashboardCoord --> CRUDCursos[Gerenciar Cursos]
+    DashboardCoord --> CRUDTurmas[Gerenciar Turmas]
+    DashboardCoord --> CRUDProfessores[Gerenciar Professores]
+    DashboardCoord --> CRUDAlunos[Gerenciar Alunos]
+
+    DashboardProf --> RegistrarNotas[Registrar Notas]
+    DashboardProf --> RegistrarPresencas[Registrar Presenças]
+
+    DashboardAluno --> VerNotas[Visualizar Notas]
+    DashboardAluno --> VerPresencas[Visualizar Presenças]
+
+classDiagram
+    class Usuario {
+      +id: number
+      +nome: string
+      +email: string
+      +senha: string
+      +funcao: string
+    }
+
+    class Coordenador {
+      +gerenciarCursos(): void
+      +gerenciarTurmas(): void
+      +gerenciarProfessores(): void
+      +gerenciarAlunos(): void
+    }
+
+    class Professor {
+      +registrarNotas(): void
+      +registrarPresencas(): void
+      +visualizarTurmas(): void
+    }
+
+    class Aluno {
+      +visualizarNotas(): void
+      +visualizarPresencas(): void
+    }
+
+    class Curso {
+      +id: number
+      +nome: string
+      +descricao: string
+    }
+
+    class Turma {
+      +id: number
+      +cursoId: number
+      +professorId: number
+      +alunos: Aluno[]
+    }
+
+    class Nota {
+      +id: number
+      +alunoId: number
+      +turmaId: number
+      +valor: number
+    }
+
+    class Presenca {
+      +id: number
+      +alunoId: number
+      +turmaId: number
+      +data: Date
+      +presente: boolean
+    }
+
+    Usuario <|-- Coordenador
+    Usuario <|-- Professor
+    Usuario <|-- Aluno
+    Curso "1" --> "N" Turma
+    Turma "1" --> "N" Aluno
+    Aluno "1" --> "N" Nota
+    Aluno "1" --> "N" Presenca
