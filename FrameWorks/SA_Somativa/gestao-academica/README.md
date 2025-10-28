@@ -1,4 +1,4 @@
-# Sistema de Gestão Acadêmica - Polyglot
+# Sistema de Gestão Acadêmica 
 
 ## Briefing
 ### Visão Geral
