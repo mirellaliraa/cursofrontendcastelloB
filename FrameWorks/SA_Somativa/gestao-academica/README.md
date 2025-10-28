@@ -159,3 +159,4 @@ classDiagram
     Turma "1" --> "N" Aluno
     Aluno "1" --> "N" Nota
     Aluno "1" --> "N" Presenca
+```
